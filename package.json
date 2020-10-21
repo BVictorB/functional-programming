@@ -1,0 +1,24 @@
+{
+  "name": "functional-programming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BVictorB/functional-programming.git"
+  },
+  "author": "Victor Boucher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BVictorB/functional-programming/issues"
+  },
+  "homepage": "https://github.com/BVictorB/functional-programming#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
