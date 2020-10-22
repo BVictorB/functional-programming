@@ -7,6 +7,7 @@
 
 body {
     background-color: #222629;
+    font-family: Avenir;
 }
 
 .color-container {
@@ -18,11 +19,12 @@ body {
     margin: 0 auto;
 }
 
-.color-container div {
+.color-block {
     width: 100%;
     height: 300px;
     position: relative;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 .color-container p {
@@ -31,7 +33,42 @@ body {
     bottom: 20px;
     left: 0px;
     text-align: center;
-    font-family: Avenir;
-    font-size: 2em;
     width: 100%;
+    pointer-events: none;
+    font-size: 2em;
+}
+
+.color-block:after {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    transition: .4s ease-in-out;
+    content: 'Copied!';
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    line-height: 300%;
+    border-radius: 30px;
+    background-color: rgba(0,0,0,.75);
+    overflow: hidden;
+}
+
+.copied:after {
+    animation: copyAnimation 2.5s ease-in-out forwards;
+}
+
+@keyframes copyAnimation {
+    0% {
+        height: 0;
+    }
+    15% {
+        height: 100%;
+    }
+    85% {
+        height: 100%;
+    }
+    100% {
+        height: 0;
+    }
 }

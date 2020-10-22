@@ -58,6 +58,8 @@ const eyeColor = (data) => {
     const createColorTiles = (newColor, colorBlock, colorText) => {
         colorText.innerHTML = '#' + newColor
         colorBlock.style.backgroundColor = '#' + newColor
+        colorBlock.classList.add('color-block')
+        colorBlock.dataset.color = newColor
         colorContainer.appendChild(colorBlock)
         colorBlock.appendChild(colorText)
     }
@@ -66,6 +68,33 @@ const eyeColor = (data) => {
     eyeColorsEdited.forEach((eyeColor) => {
         colorTiles(eyeColor)
     })
+
+    // This is the code for copying the color code to the clipboard of the user
+    const colorBlocks = document.querySelectorAll('.color-block')
+
+    colorBlocks.forEach((colorBlock) => {
+        colorBlock.addEventListener('click', (e) => {
+            colorBlock.classList.remove('copied')
+            copyColor(e.target.dataset.color)
+            giveFeedback(e.target)
+        })
+    })
+
+    // Copies the color to the clipboard
+    const copyColor = (color) => {
+        const colorText = document.createElement('textarea')
+        document.body.appendChild(colorText)
+        colorText.innerHTML = color
+        colorText.select()
+        colorText.focus()
+        document.execCommand('copy')
+        document.body.removeChild(colorText)
+    }
+
+    // Adds a css class to give the user feedback
+    const giveFeedback = (el) => {
+        el.classList.add('copied')
+    }
 }
 
 const debtAmount = (data) => {
