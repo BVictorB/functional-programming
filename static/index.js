@@ -1,8 +1,9 @@
-const eyeColor = (data) => {
+const colors = (data) => {
     const
-        eyeColors = getData(data, 'lievelingskleur') // Creates an array of colors that users filled in
-        colorContainer = document.querySelector('.color-container')
-        eyeColorsEdited = eyeColors.map(str => str.replace(/[^A-Z0-9]/ig, '').toUpperCase()) // Removes all special characters, spaces etc. from the array and makes all letters caps
+        favoriteColors = getData(data, 'lievelingskleur') // Creates an array of colors that users filled in
+        eyeColors = getData(data, 'oogKleur')
+        favoriteColorsContainer = document.querySelector('.favorite')
+        eyeColorContainer = document.querySelector('.eye')
         colorTranslate = {
         'blauw': '0000FF',
         'lichtblauw': 'ADD8E6',
@@ -16,18 +17,20 @@ const eyeColor = (data) => {
         'grijs': '666666'
         } // Object for changing users their incorrect entries to HEX color codes
 
+        // eyeColorEdited = eyeColor.map(str => str.replace(/[^A-Z0-9]/ig, '').toUpperCase()) // Removes all special characters, spaces etc. from the array and makes all letters caps
+
     // Function that runs all functions to create the colored tiles
-    const colorTiles = (color) => {
+    const colorTiles = (color, container) => {
         const
             colorBlock = document.createElement('div')
             colorText = document.createElement('p')
 
-        setColor(color, colorBlock, colorText)
+        setColor(color, colorBlock, colorText, container)
         checkContrast(color, colorText)
     }
 
     // Function that checks the color, matches it with key in object, or just uses the color given by the user
-    const setColor = (color, colorBlock, colorText) => {
+    const setColor = (color, colorBlock, colorText, container) => {
         let newColor
 
         if (color.toLowerCase() in colorTranslate) {
@@ -38,7 +41,7 @@ const eyeColor = (data) => {
         } else {
             return
         }
-        createColorTiles(newColor, colorBlock, colorText)
+        createColorTiles(newColor, colorBlock, colorText, container)
     }
 
     // Function that translates the HEX color code to RGB, and then to YIQ. We use YIQ to check if we need to change the text color to white for better contrast
@@ -55,19 +58,26 @@ const eyeColor = (data) => {
     }
 
     // Function that finally creates all the colored tiles (puts them in the DOM)
-    const createColorTiles = (newColor, colorBlock, colorText) => {
+    const createColorTiles = (newColor, colorBlock, colorText, container) => {
         colorText.innerHTML = '#' + newColor
         colorBlock.style.backgroundColor = '#' + newColor
         colorBlock.classList.add('color-block')
         colorBlock.dataset.color = newColor
-        colorContainer.appendChild(colorBlock)
+        container.appendChild(colorBlock)
         colorBlock.appendChild(colorText)
     }
 
     // This forEach method loops trough all the formatted colors in the array and runs the createColorTiles function passing trough the filled in color
-    eyeColorsEdited.forEach((eyeColor) => {
-        colorTiles(eyeColor)
+    eyeColors.forEach((eyeColor) => {
+        eyeColorEdited = eyeColor.replace(/[^A-Z0-9]/ig, '').toUpperCase()
+        colorTiles(eyeColorEdited, eyeColorContainer)
     })
+
+    favoriteColors.forEach((favoriteColor) => {
+        favoriteColorEdited = favoriteColor.replace(/[^A-Z0-9]/ig, '').toUpperCase()
+        colorTiles(favoriteColorEdited, favoriteColorsContainer)
+    })
+
 
     // This is the code for copying the color code to the clipboard of the user
     const colorBlocks = document.querySelectorAll('.color-block')
@@ -115,10 +125,28 @@ const getData = (data, column) => {
 }
 
 const useData = (data) => {
-    eyeColor(data)
+    colors(data)
     debtAmount(data)
 }
 
 fetch('./data/survey-dataset.json')
     .then(res => res.json())
     .then(fetchedData => useData(fetchedData))
+
+
+
+
+
+const options = document.querySelectorAll('.option')
+const container = document.querySelector('.data-container')
+const containerChildren = container.querySelectorAll(":scope > div")
+
+options.forEach((option) => {
+    option.addEventListener('click', (e) => {
+        console.log(e.target.dataset.container)
+        containerChildren.forEach((containerChild) => {
+            containerChild.classList.remove('visible')
+        })
+        document.querySelector(e.target.dataset.container).classList.add('visible')
+    })
+})
