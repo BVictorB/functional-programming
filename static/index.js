@@ -107,6 +107,7 @@ const colors = (data) => {
     }
 }
 
+// Function for calculating the amount of students with the same amount of debt
 const debtAmount = (data) => {
     const studentDebts = getData(data, 'hoogteStudieschuld')
 
@@ -120,7 +121,7 @@ const debtAmount = (data) => {
     }
 }
 
-
+// Function that returns an array of the column that was passed trough the parameters
 const getData = (data, column) => {
     return data.map(result => result[column])
 }
@@ -136,7 +137,7 @@ fetch('./data/survey-dataset.json')
     .then(res => res.json())
     .then(fetchedData => useData(fetchedData))
 
-
+// Code for the buttons that let the user choose what they want to see
 const options = document.querySelectorAll('.option')
 const container = document.querySelector('.data-container')
 const containerChildren = container.querySelectorAll(":scope > div")
