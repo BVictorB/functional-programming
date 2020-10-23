@@ -134,19 +134,20 @@ fetch('./data/survey-dataset.json')
     .then(fetchedData => useData(fetchedData))
 
 
-
-
-
 const options = document.querySelectorAll('.option')
 const container = document.querySelector('.data-container')
 const containerChildren = container.querySelectorAll(":scope > div")
 
 options.forEach((option) => {
     option.addEventListener('click', (e) => {
-        console.log(e.target.dataset.container)
         containerChildren.forEach((containerChild) => {
             containerChild.classList.remove('visible')
         })
         document.querySelector(e.target.dataset.container).classList.add('visible')
+
+        options.forEach((option) => {
+            option.classList.remove('active')
+        })
+        e.target.classList.add('active')
     })
 })

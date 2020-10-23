@@ -6,8 +6,9 @@
 }
 
 body {
-    background-color: #222629;
+    background-color: #2f3e46;
     font-family: Avenir;
+    min-height: 110vh;
 }
 
 .options-container {
@@ -20,37 +21,40 @@ body {
 }
 
 .option {
-    background-color: hotpink;
+    background-color: #84a98c;
     width: 100%;
-    height: 300px;
+    height: 150px;
     position: relative;
     border-radius: 30px;
     cursor: pointer;
     text-align: center;
+    transition: background-color .2s ease-in-out;
 }
 
 .option p {
-    padding-top: 120px;
+    padding-top: 45px;
     font-size: 3em;
-    color: white;
+    color: #2f3e46;
     pointer-events: none;
 }
 
 .active {
-    background-color: red;
+    background-color: #cad2c5;
 }
 
 .color-container {
     padding: 30px;
-    display: none;
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
     max-width: 1440px;
     margin: 0 auto;
+    transform: translateX(-100vw);
+    transition: transform .5s ease-in-out;
 }
 
 .visible {
-    display: grid;
+    transform: translateX(0vw);
 }
 
 .color-block {
