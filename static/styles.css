@@ -43,18 +43,20 @@ body {
 }
 
 .color-container {
+    width: 100%;
+    position: absolute;
     padding: 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
     max-width: 1440px;
-    margin: 0 auto;
-    transform: translateX(-100vw);
+    left: 50%;
+    transform: translateX(-200vw);
     transition: transform .5s ease-in-out;
 }
 
 .visible {
-    transform: translateX(0vw);
+    transform: translateX(-50%);
 }
 
 .color-block {

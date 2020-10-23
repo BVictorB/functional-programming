@@ -120,15 +120,18 @@ const debtAmount = (data) => {
     }
 }
 
+
 const getData = (data, column) => {
     return data.map(result => result[column])
 }
 
+// Code that executes functions and passes the data after retrieving json data
 const useData = (data) => {
     colors(data)
     debtAmount(data)
 }
 
+// Code for fetching the json data
 fetch('./data/survey-dataset.json')
     .then(res => res.json())
     .then(fetchedData => useData(fetchedData))
