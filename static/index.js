@@ -1,3 +1,19 @@
+// Code for fetching the json data
+fetch('./data/survey-dataset.json')
+    .then(res => res.json())
+    .then(fetchedData => useData(fetchedData))
+
+// Function that returns an array of the column that was passed trough the parameters
+const getData = (data, column) => {
+    return data.map(result => result[column])
+}
+
+// Code that executes functions and passes the data after retrieving json data
+const useData = (data) => {
+    colors(data)
+    debtAmount(data)
+}
+
 const colors = (data) => {
     const
         favoriteColors = getData(data, 'lievelingskleur') // Creates an array of colors that users filled in
@@ -78,8 +94,25 @@ const colors = (data) => {
         colorTiles(favoriteColorEdited, favoriteColorsContainer)
     })
 
+    copyColor()
+}
 
-    // This is the code for copying the color code to the clipboard of the user
+// Function for calculating the amount of students with the same amount of debt
+const debtAmount = (data) => {
+    const studentDebts = getData(data, 'hoogteStudieschuld')
+
+    const sortStudentDebts = studentDebts.reduce((obj, key) => {
+        obj[key] = (obj[key] || 0) + 1 // Or '++obj[key] || 1' both would work 
+        return obj
+    }, {})
+
+    for (key in sortStudentDebts) {
+        console.log(key + ': ' + sortStudentDebts[key])
+    }
+}
+
+// This is the code for copying the color code to the clipboard of the user
+const copyColor = () => {
     const colorBlocks = document.querySelectorAll('.color-block')
 
     colorBlocks.forEach((colorBlock) => {
@@ -106,36 +139,6 @@ const colors = (data) => {
         el.classList.add('copied')
     }
 }
-
-// Function for calculating the amount of students with the same amount of debt
-const debtAmount = (data) => {
-    const studentDebts = getData(data, 'hoogteStudieschuld')
-
-    const sortStudentDebts = studentDebts.reduce((obj, key) => {
-        obj[key] = (obj[key] || 0) + 1 // Or '++obj[key] || 1' both would work 
-        return obj
-    }, {})
-
-    for (key in sortStudentDebts) {
-        console.log(key + ': ' + sortStudentDebts[key])
-    }
-}
-
-// Function that returns an array of the column that was passed trough the parameters
-const getData = (data, column) => {
-    return data.map(result => result[column])
-}
-
-// Code that executes functions and passes the data after retrieving json data
-const useData = (data) => {
-    colors(data)
-    debtAmount(data)
-}
-
-// Code for fetching the json data
-fetch('./data/survey-dataset.json')
-    .then(res => res.json())
-    .then(fetchedData => useData(fetchedData))
 
 // Code for the buttons that let the user choose what they want to see
 const options = document.querySelectorAll('.option')
