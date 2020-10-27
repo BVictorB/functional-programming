@@ -1,11 +1,20 @@
 // Code for fetching the json data
-fetch('./data/survey-dataset.json')
-    .then(res => res.json())
-    .then(fetchedData => useData(fetchedData))
+// Old code that i used before
+// fetch('./data/survey-dataset.json')
+//     .then(res => res.json())
+//     .then(fetchedData => useData(fetchedData))
 
-// Function that returns an array of the column that was passed trough the parameters
-const getData = (data, column) => {
-    return data.map(result => result[column])
+// New code using async await
+const fetchData = async (url) => {
+    const response = await fetch(url)
+    const data = await response.json()
+    useData(data)
+}
+fetchData('./data/survey-dataset.json')
+
+// Function that returns an array of the key that was passed through the parameters
+const getData = (data, key) => {
+    return data.map(result => result[key])
 }
 
 // Code that executes functions and passes the data after retrieving json data
