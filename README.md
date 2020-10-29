@@ -20,7 +20,7 @@ My idea for this project is to retrieve data from the [RDW datasets](https://ope
 I have created a few research questions to support my research. There is a main research question that I find most important in my assignment, I will mostly focus on this one. But I will also try to implement answering assets/features for the other research questions.
 ### **_Is there a connection between the increasing parking prices and the opening of new parking garages in Amsterdam?_**
 - _**Is it cheaper to park in a parking garage or on the street (for each district)?**_
-- _**Is the accessibility for disabled people good in all parking garages in Amsterdam?**_
+- _**Is the parking garage accessible for disabled people?**_
 - _**Are there any benefits in the parking garages that are more expensive? (location, electric charging, accessibility)**_
 - _**Is it free to park at night in the parking garages compared to on the street?**_
 ***
