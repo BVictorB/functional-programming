@@ -52,6 +52,7 @@ These datasets are already useful for my assignment:
     * Fare calculation code
     * Fare calculation description
     * AreaMangerId (to combine with other datasets)
+    * **Note**: It is not possible to calculate all the prices from all parking garages with this dataset. I will need to use a dataset from the NPR (Nationaal Parkeer Register)
 
 - [Parkeertariefgebieden, Parkeergarages en Parkeerautomaten](https://data.amsterdam.nl/datasets/vhPVaBEEW6vbCA/parkeertariefgebieden-parkeergarages-en-parkeerautomaten/) (Data and Information Amsterdam):
     * Parking prices
@@ -59,6 +60,7 @@ These datasets are already useful for my assignment:
     * Location and shape of different parking areas
     * Parking garage locations & information
     * Parking ticket machine locations & information
+    * **Note**: I will need more data from Data and Information Amsterdam, I have sent them an email asking for the datasets
 ***
 ## Features
 ***
