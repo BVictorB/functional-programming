@@ -42,3 +42,4 @@ npm run dev
 ***
 ## Sources
 - Checking brightness of a color to improve contrast: https://gomakethings.com/dynamically-changing-the-text-color-based-on-background-color-contrast-with-vanilla-js/
+- [MDN](https://developer.mozilla.org/)
