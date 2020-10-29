@@ -1,5 +1,5 @@
 export const roundToTwoDecimals = (number) => {
-    return Math.round((number.amountfarepart / number.stepsizefarepart * 60) * 100) / 100
+    return Math.round(number * 100) / 100
 }
 
 export const filterDataFromKey = (data, key) => {
