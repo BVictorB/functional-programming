@@ -46,6 +46,8 @@ npm i
 ```
 npm run dev
 ```
+![CLI gif](https://media1.tenor.com/images/356bac3dd24014fd740d196138f3d0f8/tenor.gif?itemid=10933901)  
+_(https://tenor.com/view/command-line-site-not-ready-message-comment-gif-10933901)_
 ***
 ## Sources
 - Checking brightness of a color to improve contrast: https://gomakethings.com/dynamically-changing-the-text-color-based-on-background-color-contrast-with-vanilla-js/
