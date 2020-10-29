@@ -25,7 +25,7 @@ I have created a few research questions to support my research. There is a main 
 - _**Is it free to park at night in the parking garages compared to on the street?**_
 ***
 ### Required datasets
-I will need a few datasets to retrieve all the data that I will need for the assignment. Most of the data that I will need is available in the RDW datasets. But I also need some data that is not available. I am going to get in contact with the people from 'Data and Information Amsterdam' to ask them for the data.  
+I will need a few datasets to retrieve all the data that I will need for the assignment. Most of the data that I will need is available in the RDW datasets. But I also need some data that is not available (the history of parking prices in Amsterdam). I am going to get in contact with the people from 'Data and Information Amsterdam' to ask them for the data.  
 These datasets are already useful for my assignment:
 - [GEO Parkeer Garages](https://opendata.rdw.nl/Parkeren/GEO-Parkeer-Garages/t5pc-eb34) (RDW):
     * GEO data of parking garages
