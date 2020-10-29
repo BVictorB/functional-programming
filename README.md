@@ -1,17 +1,18 @@
 # Functional programming
 This repo is for the functional programming course assignments of the Information Design Tech Track. In this course we will learn about functional programming in JavaScript, how to clean data so you can use it for data visualizations and how to filter/sort data so we can combine/compare datasets and learn more about the subject.  
 
-![gif](https://media1.tenor.com/images/505ddb5e0b0e8c3e96b66e1469ef47c1/tenor.gif)
+![Jim Carrey typing gif](https://media1.tenor.com/images/505ddb5e0b0e8c3e96b66e1469ef47c1/tenor.gif)  
+_(https://tenor.com/view/typing-jim-carrey-fast-busy-gif-4903969)_
 ***
 ## Debriefing
 The newspaper 'De Volkskrant' wants to get interesting insights on connections in the RDW datasets. It is our job to find interesting information in the datasets, and make a data visualization about that information/subject. De Volkskrant can that see if they can use the information shown to write an interesting article.
 They gave us the option to use the datasets from the RDW, but we can also look for other interesting datasets as long as it has to do with 'the car in the city'.  
 Click [here](https://github.com/BVictorB/functional-programming/wiki/Research-datasets) for some information on some RDW datasets.
 
-![De Volkskrant](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Volkskrant.svg/1200px-Volkskrant.svg.png)
+![De Volkskrant](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Volkskrant.svg/1200px-Volkskrant.svg.png)  
 _(https://nl.wikipedia.org/wiki/Bestand:Volkskrant.svg)_
 ***
-## Assignments (for the functional programming course)
+## Assignments (functional programming course)
 Retrieve JSON data and practice on cleaning and/or filtering this data so you can use it in your DOM. Use functional programming methods and patterns to clean the data. Write smart functions that are dynamic, so you can reuse them whenever you need them. Create a logical structure in your code, and/or split up files to make everything cleaner.
 
 There are two main folders in this repo: 'survey-assignment' and 'final-assignment'. The first one contains the code that I have written to practice with data cleaning and fetching. The second one (final-assignment) is the folder that contains the beginning of our final deliverable, this contains code to clean/filter the RDW data so I can use it in the following courses.
@@ -28,6 +29,9 @@ I have created a few research questions to support my research. There is a main 
 - _**Is it free to park at night in the parking garages compared to on the street?**_
 
 If you want to read more about my concept, research questions and the datasets that I will need, click [here](https://github.com/BVictorB/functional-programming/wiki/RDW-Concept)
+
+![Car parking gif](https://media1.tenor.com/images/ab7c163110442028965e67232a0ebf60/tenor.gif?itemid=17599579)  
+_(https://tenor.com/view/meeting-bad-parking-car-break-glass-fail-gif-17599579)_
 ***
 ## Installing
 - Clone this repo
