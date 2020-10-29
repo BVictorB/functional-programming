@@ -6,6 +6,7 @@ The newspaper 'De Volkskrant' wants to get interesting insights on connections i
 They gave us the option to use the datasets from the RDW, but we can also look for other interesting datasets as long as it has to do with 'the car in the city'.
 
 ![De Volkskrant](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Volkskrant.svg/1200px-Volkskrant.svg.png)
+_(https://nl.wikipedia.org/wiki/Bestand:Volkskrant.svg)_
 ***
 ## Assignment
 Retrieve JSON data and practice on cleaning and/or filtering this data so you can use it in your DOM. Use functional programming methods and patterns to clean the data. Write smart functions that are dynamic, so you can reuse them whenever you need them. Create a logical structure in your code, and/or split up files to make everything cleaner.
