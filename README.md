@@ -4,6 +4,8 @@ This repo is for the functional programming course assignments of the Informatio
 ## Debriefing
 The newspaper 'De Volkskrant' wants to get interesting insights on connections in the RDW datasets. It is our job to find interesting information in the datasets, and make a data visualization about that information/subject. De Volkskrant can that see if they can use the information shown to write an interesting article.
 They gave us the option to use the datasets from the RDW, but we can also look for other interesting datasets as long as it has to do with 'the car in the city'.
+
+![De Volkskrant](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Volkskrant.svg/1200px-Volkskrant.svg.png)
 ***
 ## Assignment
 Retrieve JSON data and practice on cleaning and/or filtering this data so you can use it in your DOM. Use functional programming methods and patterns to clean the data. Write smart functions that are dynamic, so you can reuse them whenever you need them. Create a logical structure in your code, and/or split up files to make everything cleaner.
@@ -67,6 +69,10 @@ git clone https://github.com/BVictorB/functional-programming.git .
 - Install all NPM packages (run this command in both main folders where the package.json file is located)
 ```
 npm i
+```
+- Execute the parcel script to compile everything and start a local static server (http://localhost:1234/)
+```
+npm run dev
 ```
 ***
 ## Sources
