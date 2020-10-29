@@ -24,59 +24,7 @@ I have created a few research questions to support my research. There is a main 
 - _**Are there any benefits in the parking garages that are more expensive? (location, electric charging, accessibility)**_
 - _**Is it free to park at night in the parking garages compared to on the street?**_
 
-### Required datasets
-I will need a few datasets to retrieve all the data that I will need for the assignment. Most of the data that I will need is available in the RDW datasets. But I also need some data that is not available (the history of parking prices in Amsterdam). I am going to get in contact with the people from 'Data and Information Amsterdam' to ask them for the data.  
-These datasets are already useful for my assignment:
-- [GEO Parkeer Garages](https://opendata.rdw.nl/Parkeren/GEO-Parkeer-Garages/t5pc-eb34) (RDW):
-    * GEO data of parking garages
-    * Short description about the parking garage
-    * Opening date of parking garage
-    * AreaId (to combine with other datasets)
-    * AreaMangerId (to combine with other datasets)
-
-- [Tariefdeel](https://opendata.rdw.nl/Parkeren/Open-Data-Parkeren-TARIEFDEEL/534e-5vdg) (RDW):
-    * Pricing per 'step'
-    * Amount of minutes in each 'step'
-    * Start date of this pricing
-    * Identification code of the pricing-kind
-    * AreaMangerId (to combine with other datasets)
-
-- [Specificaties Parkeergebied](https://opendata.rdw.nl/Parkeren/Open-Data-Parkeren-SPECIFICATIES-PARKEERGEBIED/b3us-f26s) (RDW):
-    * The capacity of the parking garage
-    * How accessible the parking garage is for disabled people
-    * Charging point capacity for electric vehicles
-    * AreaId (to combine with other datasets)
-    * AreaMangerId (to combine with other datasets)
-
-- [Tariefberekening](https://opendata.rdw.nl/Parkeren/Open-Data-Parkeren-TARIEFBEREKENING/nfzq-8g7y) (RDW):
-    * Fare calculation code
-    * Fare calculation description
-    * AreaMangerId (to combine with other datasets)
-    * **Note**: It is not possible to calculate all the prices from all parking garages with this dataset. I will need to use a dataset from the NPR (Nationaal Parkeer Register)
-
-- [Parkeertariefgebieden, Parkeergarages en Parkeerautomaten](https://data.amsterdam.nl/datasets/vhPVaBEEW6vbCA/parkeertariefgebieden-parkeergarages-en-parkeerautomaten/) (Data and Information Amsterdam):
-    * Parking prices
-    * Different prices in different parking areas
-    * Location and shape of different parking areas
-    * Parking garage locations & information
-    * Parking ticket machine locations & information
-    * **Note**: I will need more data from Data and Information Amsterdam, I have sent them an email asking for the datasets
-    
-All the datasets have the same JSON structure, I will need to convert some values to values that can be used in my case. For example geo data, since the syntax is not regular geojson.
-```json
-{
-"areaid": "599_KRZM",
-"areamanagerid": "599",
-"capacity": "1700",
-"chargingpointcapacity": "4",
-"disabledaccess": "0",
-"enddatespecifications": "20991231235959",
-"maximumvehicleheight": "0",
-"startdatespecifications": "20141101000000",
-},
-```
-***
-## Features
+If you want to read more about my concept, research questions and the datasets that I will need, click [here](https://github.com/BVictorB/functional-programming/wiki/RDW-Concept)
 ***
 ## Installing
 - Clone this repo
@@ -93,3 +41,4 @@ npm run dev
 ```
 ***
 ## Sources
+- Checking brightness of a color to improve contrast: https://gomakethings.com/dynamically-changing-the-text-color-based-on-background-color-contrast-with-vanilla-js/
