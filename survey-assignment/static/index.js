@@ -84,8 +84,8 @@ const colors = (data) => {
 
     // Function that finally creates all the colored tiles (puts them in the DOM)
     const createColorTiles = (newColor, colorBlock, colorText, container) => {
-        colorText.innerHTML = '#' + newColor
-        colorBlock.style.backgroundColor = '#' + newColor
+        colorText.innerHTML = `#${newColor}`
+        colorBlock.style.backgroundColor = `#${newColor}`
         colorBlock.classList.add('color-block')
         colorBlock.dataset.color = newColor
         container.appendChild(colorBlock)
@@ -116,7 +116,7 @@ const debtAmount = (data) => {
     }, {})
 
     for (key in sortStudentDebts) {
-        console.log(key + ': ' + sortStudentDebts[key])
+        console.log(`${key}: ${sortStudentDebts[key]}`)
     }
 }
 
