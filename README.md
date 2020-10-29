@@ -1,5 +1,7 @@
 # Functional programming
-This repo is for the functional programming course assignments of the Information Design Tech Track. In this course we will learn about functional programming in JavaScript, how to clean data so you can use it for data visualizations and how to filter/sort data so we can combine/compare datasets and learn more about the subject.
+This repo is for the functional programming course assignments of the Information Design Tech Track. In this course we will learn about functional programming in JavaScript, how to clean data so you can use it for data visualizations and how to filter/sort data so we can combine/compare datasets and learn more about the subject.  
+
+![gif](https://media1.tenor.com/images/505ddb5e0b0e8c3e96b66e1469ef47c1/tenor.gif)
 ***
 ## Debriefing
 The newspaper 'De Volkskrant' wants to get interesting insights on connections in the RDW datasets. It is our job to find interesting information in the datasets, and make a data visualization about that information/subject. De Volkskrant can that see if they can use the information shown to write an interesting article.
