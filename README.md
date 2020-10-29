@@ -61,6 +61,20 @@ These datasets are already useful for my assignment:
     * Parking garage locations & information
     * Parking ticket machine locations & information
     * **Note**: I will need more data from Data and Information Amsterdam, I have sent them an email asking for the datasets
+    
+All the datasets have the same JSON structure, I will need to convert some values to values that can be used in my case. For example geo data, since the syntax is not regular geojson.
+```json
+{
+"areaid": "599_KRZM",
+"areamanagerid": "599",
+"capacity": "1700",
+"chargingpointcapacity": "4",
+"disabledaccess": "0",
+"enddatespecifications": "20991231235959",
+"maximumvehicleheight": "0",
+"startdatespecifications": "20141101000000",
+},
+```
 ***
 ## Features
 ***
