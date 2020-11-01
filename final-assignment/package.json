@@ -21,9 +21,7 @@
   },
   "homepage": "https://github.com/BVictorB/functional-programming#readme",
   "dependencies": {
-    "fs": "0.0.1-security",
-    "http": "0.0.1-security",
-    "path": "^0.12.7"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",

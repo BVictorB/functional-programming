@@ -2,3 +2,4 @@
 **/data/
 **/.cache
 **/dist
+.DS_Store
