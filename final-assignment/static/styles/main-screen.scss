@@ -25,6 +25,17 @@
 /* -------------------------------------------------------------------------- */
 /*                                    Pages                                   */
 /* -------------------------------------------------------------------------- */
-body {
-    background-color: hotpink;
+path {
+   fill: lightblue; 
+   stroke: black;
+   stroke-opacity: .4;
+}
+
+circle:hover {
+   fill: hotpink;
+}
+
+svg g {
+   width: 600%;
+   height: 600%
 }

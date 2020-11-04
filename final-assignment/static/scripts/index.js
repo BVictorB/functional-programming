@@ -1,39 +1,43 @@
 import { getData } from './partials/getData'
-import { roundToTwoDecimals, filterDataFromKey, formatGeoData } from './partials/helperFunctions'
+import { drawMap } from './partials/d3Functions'
 
-// getData('https://opendata.rdw.nl/resource/534e-5vdg.json?$limit=10000').then(result => {
-//     const pricePerHour = []
-//     result.forEach(item => {
-//         pricePerHour.push({
-//             areamanagerid: item.areamanagerid,
-//             price: roundToTwoDecimals(item.amountfarepart / item.stepsizefarepart * 60)
-//         })
-//     })
-//     // console.log(filterDataFromKey(result, 'areamanagerid'))
-//     console.log(pricePerHour)
-// })
-
-// getData('https://opendata.rdw.nl/resource/t5pc-eb34.json').then(result => {
-//     const geoLocations = []
-//     result.forEach(geoData => {
-//         geoLocations.push(formatGeoData(geoData.location, geoData.areadesc, geoData.areaid))
-//     })
-//     console.log(geoLocations)
-// })
-
-getData('https://opendata.rdw.nl/resource/mz4f-59fw.json?$limit=10000').then(result => {
-    let hasTariffs = 0
-    let doesNotHaveTariffs = 0
-    result.forEach((areaID, index) => {
-        setTimeout(() => {
-            getData(`https://npropendata.rdw.nl//parkingdata/v2/static/${areaID.uuid}`).then(UUID => {
-            if (UUID.parkingFacilityInformation.tariffs[0]) {
-                hasTariffs++
-            } else {
-                doesNotHaveTariffs++
+getData('https://npropendata.rdw.nl//parkingdata/v2')
+    .then(fetchedGarages => {
+        const garagePromises = []
+        fetchedGarages.ParkingFacilities.forEach(fetchedGarage => {
+            if (fetchedGarage.name && fetchedGarage.name.toLowerCase().includes('amsterdam')) {
+                garagePromises.push(fetchGarageData(fetchedGarage))
             }
-            console.log(`Tariff: ${hasTariffs}, No tariff: ${doesNotHaveTariffs}`)
         })
-        }, index * 10)
+
+        Promise.all(garagePromises).then(garageArray => {
+            const filteredGarages = garageArray.filter(garage => garage ? true : false)
+            const garageObject = { 'features': [] }
+            filteredGarages.forEach(filteredGarage => {
+                garageObject.features.push(filteredGarage)
+            })
+            drawMap(garageObject)
+        })
     })
-})
+
+const fetchGarageData = (fetchedGarage) => {
+    return getData(fetchedGarage.staticDataUrl)
+        .then(garage => {
+            const garageData = garage.parkingFacilityInformation.accessPoints[0]
+            if (garageData) {
+                 return {
+                    'geometry': {
+                        'type': 'Point', 
+                        'coordinates': [
+                            garageData.accessPointLocation[0].longitude, 
+                            garageData.accessPointLocation[0].latitude
+                        ]
+                    }, 
+                    'type': 'Feature', 
+                    'properties': {
+                        'name': garage.parkingFacilityInformation.description
+                    }
+                }
+            }
+        })
+}
